@@ -5,12 +5,14 @@ export default function AnimatedTestimonialsDemo() {
     {
       quote: "Secure Sign-up and Sign-in",
       name: "Authentication",
+      designation: "Security",
       src: "/Opus-Sign-up.png",
     },
     {
       quote:
         " Create a new organization or join one with an invite code.",
       name: "Organization Flow",
+      designation: "Onboarding",
       src: "/Opus-Organization-flow.png",
     },
  
@@ -18,16 +20,19 @@ export default function AnimatedTestimonialsDemo() {
       quote:
         "Communicate with teammates in real time.",
       name: "Live TeamChat",
+      designation: "Collaboration",
       src: "/Opus-Project-teamchat.png",
     },
     {
       quote:"Promote admins and manage access.",
       name:"Team Settings",
+      designation: "Access Control",
       src:"/Opus-team-setting.png",
     },
     {
       quote:"Update name, avatar, and account details.",
       name:"Profile Settings",
+      designation: "Management",
       src:"/Opus-personal-setting.png",
     }
   ];
