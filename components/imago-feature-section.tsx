@@ -3,6 +3,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
+import { motion } from "motion/react";
 import { IconBrandYoutubeFilled, IconBrandGithub } from "@tabler/icons-react";
 import Link from "next/link";
 import { FocusCards } from "@/components/ui/focus-cards";
@@ -360,7 +361,8 @@ export const Globe = ({ className }: { className?: string }) => {
         { location: [37.7595, -122.4367], size: 0.03 },
         { location: [40.7128, -74.006], size: 0.1 },
       ],
-      onRender: (state) => {
+      // @ts-expect-error COBE types are missing onRender
+      onRender: (state: Record<string, any>) => {
         // Called on every animation frame.
         // `state` will be an empty object, return updated params.
         state.phi = phi;

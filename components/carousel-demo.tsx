@@ -4,15 +4,18 @@ import Carousel from "@/components/ui/carousel";
 export default function CarouselDemo() {
   const slideData = [
     {
-      title: "Dashboard",
+      title: "Dashboard Overview",
+      button: "",
       src: "/Opus-Dashboard-flow.png",
     },
     {
-      title: "Project Workspace",
+      title: "Organization Workspace",
+      button: "",
       src: "/Opus-Project-workspace.png",
     },
     {
-      title: "AI Assistant",
+      title: "Ai Assistant Chat",
+      button: "",
       src: "/Opus-Project-aichat.png",
     },
   ];
