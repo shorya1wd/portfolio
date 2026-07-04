@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { IconBrandYoutubeFilled, IconBrandGithub } from "@tabler/icons-react";
 import Link from "next/link";
+import Image from "next/image";
 import AnimatedTestimonialsDemo from "@/components/animated-testimonials-demo";
 import CarouselDemo from "./carousel-demo";
 
@@ -66,18 +67,18 @@ export default function OpusAIFeatureSection() {
   return (
     <div className="relative z-20 mx-auto max-w-7xl py-10 lg:py-40">
       {/* Subtle background glow */}
-      <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black" />
+      <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center bg-white mask-[radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black" />
       <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[500px] w-[500px] -translate-x-1/2 translate-y-[-20%] rounded-full bg-sky-500/10 blur-[100px]" />
 
       <div className="relative px-8">
-        <h4 className="mx-auto max-w-5xl text-center text-3xl font-medium tracking-tight lg:text-5xl lg:leading-tight bg-clip-text text-transparent bg-gradient-to-br from-neutral-900 to-neutral-500 dark:from-neutral-100 dark:to-neutral-500">
+        <h4 className="mx-auto max-w-5xl text-center text-3xl font-medium tracking-tight lg:text-5xl lg:leading-tight bg-clip-text text-transparent bg-linear-to-br from-neutral-900 to-neutral-500 dark:from-neutral-100 dark:to-neutral-500">
            Enterprise-Grade Multi-Tenant SaaS Workspace
         </h4>
 
         <p className="mx-auto my-4 max-w-2xl text-center text-sm font-normal text-neutral-500 lg:text-base dark:text-neutral-300">
         
           <Link href="https://opusai.online" target="_blank"
-                rel="noopener noreferrer" className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-600">
+                rel="noopener noreferrer" className="font-semibold text-transparent bg-clip-text bg-linear-to-r from-sky-400 to-blue-600">
             OpusAI
           </Link>
           {" "}is a full-stack, AI-powered collaboration platform streamlining project management, real-time communication, and document handling into a single, secure environment.
@@ -137,7 +138,7 @@ const FeatureCard = ({
 const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
   return (
     <div className="flex items-center gap-3">
-      <div className="h-3 w-3 rounded-full bg-gradient-to-br from-sky-400 to-blue-600 shadow-[0_0_10px_rgba(56,189,248,0.5)]" />
+      <div className="h-3 w-3 rounded-full bg-linear-to-br from-sky-400 to-blue-600 shadow-[0_0_10px_rgba(56,189,248,0.5)]" />
       <p className="max-w-5xl text-left text-xl tracking-tight text-black md:text-2xl md:leading-snug dark:text-white font-semibold">
         {children}
       </p>
@@ -164,18 +165,18 @@ export const SkeletonOne = () => {
       <div className="group mx-auto h-full w-full bg-white p-5 shadow-2xl dark:bg-neutral-900">
         <div className="flex h-full w-full flex-1 flex-col space-y-2">
           {/* TODO */}
-          <img
+          <Image
             src="/linear.webp"
             alt="header"
             width={800}
             height={800}
-            className="aspect-square h-full w-full rounded-sm object-cover object-left-top"
+            className="aspect-square h-full w-full rounded-sm object-cover object-top-left"
           />
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-40 h-60 w-full bg-gradient-to-t from-white via-white to-transparent dark:from-black dark:via-black" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-40 h-60 w-full bg-gradient-to-b from-white via-transparent to-transparent dark:from-black" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-40 h-60 w-full bg-linear-to-t from-white via-white to-transparent dark:from-black dark:via-black" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-40 h-60 w-full bg-linear-to-b from-white via-transparent to-transparent dark:from-black" />
     </div>
   );
 };
@@ -191,7 +192,7 @@ export const SkeletonThree = () => {
         <div className="relative flex h-full w-full flex-1 flex-col space-y-2">
           {/* TODO */}
           <IconBrandYoutubeFilled className="absolute inset-0 z-10 m-auto h-20 w-20 text-red-500" />
-          <img
+          <Image
             src="https://assets.aceternity.com/fireship.jpg"
             alt="header"
             width={800}
@@ -241,11 +242,11 @@ export const SkeletonTwo = () => {
             whileTap="whileTap"
             className="mt-4 -mr-4 shrink-0 overflow-hidden rounded-xl border border-neutral-100 bg-white p-1 dark:border-neutral-700 dark:bg-neutral-800"
           >
-            <img
+            <Image
               src={image}
               alt="bali images"
-              width="500"
-              height="500"
+              width={500}
+              height={500}
               className="h-20 w-20 shrink-0 rounded-lg object-cover md:h-40 md:w-40"
             />
           </motion.div>
@@ -264,19 +265,19 @@ export const SkeletonTwo = () => {
             whileTap="whileTap"
             className="mt-4 -mr-4 shrink-0 overflow-hidden rounded-xl border border-neutral-100 bg-white p-1 dark:border-neutral-700 dark:bg-neutral-800"
           >
-            <img
+            <Image
               src={image}
               alt="bali images"
-              width="500"
-              height="500"
+              width={500}
+              height={500}
               className="h-20 w-20 shrink-0 rounded-lg object-cover md:h-40 md:w-40"
             />
           </motion.div>
         ))}
       </div>
 
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-[100] h-full w-20 bg-gradient-to-r from-white to-transparent dark:from-black" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-[100] h-full w-20 bg-gradient-to-l from-white to-transparent dark:from-black" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-100 h-full w-20 bg-linear-to-r from-white to-transparent dark:from-black" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-100 h-full w-20 bg-linear-to-l from-white to-transparent dark:from-black" />
     </div>
   );
 };
