@@ -81,7 +81,8 @@ export default function BackgroundRippleEffectDemo() {
     ? Math.floor(containerWidth / cols)
     : 56;
 
-  const activeIndices = config.indices;
+  const activeIndices = baseConfig.indices;
+  const gridHeight = cellSize * baseConfig.rows;
 
   const cellContent: Record<number, React.ReactNode> = {};
   logos.forEach((logo, i) => {
@@ -120,16 +121,18 @@ export default function BackgroundRippleEffectDemo() {
 
       {/* Beautifully styled card container for the grid */}
       <div 
+        ref={containerRef}
         className="relative w-full max-w-[1512px] rounded-3xl border border-white/20 bg-neutral-900/40 shadow-[0_0_50px_rgba(255,255,255,0.05)] overflow-hidden flex items-center justify-center backdrop-blur-md transition-all duration-500"
-        style={{ height: config.height }}
+        style={{ height: gridHeight || baseConfig.height }}
       >
         {/* Subtle inner vignette shadow to give the card depth */}
         <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_80px_rgba(0,0,0,0.4)] z-10 rounded-3xl" />
         
         <BackgroundRippleEffect 
           cellContent={cellContent} 
-          rows={config.rows} 
-          cols={config.cols} 
+          rows={baseConfig.rows} 
+          cols={baseConfig.cols}
+          cellSize={cellSize}
         />
       </div>
     </div>
