@@ -24,9 +24,20 @@ export default function AboutMeSection() {
           </h2>
           
           <MagneticButton>
+            {/* mailto: for mobile/tablet/iPad (< 1280px) */}
             <a
               href="mailto:shoryabhushan0@gmail.com"
-              className="inline-flex w-fit items-center gap-2 rounded-full bg-violet-500/10 border border-violet-500/30 px-5 py-2.5 text-sm font-medium text-violet-400 hover:bg-violet-500/20 hover:border-violet-400 transition-all duration-300"
+              className="xl:hidden inline-flex w-fit items-center gap-2 rounded-full bg-violet-500/10 border border-violet-500/30 px-5 py-2.5 text-sm font-medium text-violet-400 hover:bg-violet-500/20 hover:border-violet-400 transition-all duration-300"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-violet-400 animate-pulse" />
+              Let&apos;s Talk
+            </a>
+            {/* Gmail compose for laptops 14"+ (≥ 1280px) */}
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=shoryabhushan0@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden xl:inline-flex w-fit items-center gap-2 rounded-full bg-violet-500/10 border border-violet-500/30 px-5 py-2.5 text-sm font-medium text-violet-400 hover:bg-violet-500/20 hover:border-violet-400 transition-all duration-300"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-violet-400 animate-pulse" />
               Let&apos;s Talk

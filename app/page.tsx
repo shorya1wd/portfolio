@@ -66,9 +66,20 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center md:items-end gap-4">
             <MagneticButton>
+              {/* mailto: for mobile/tablet/iPad (< 1280px) */}
               <a
                 href="mailto:shoryabhushan0@gmail.com"
-                className="inline-flex items-center gap-2 rounded-full bg-violet-500/10 border border-violet-500/40 px-6 py-2.5 text-sm font-semibold text-violet-300 hover:bg-violet-500/20 hover:border-violet-400/50 transition-colors"
+                className="xl:hidden inline-flex items-center gap-2 rounded-full bg-violet-500/10 border border-violet-500/40 px-6 py-2.5 text-sm font-semibold text-violet-300 hover:bg-violet-500/20 hover:border-violet-400/50 transition-colors"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-violet-500 animate-pulse" />
+                Let&apos;s Talk
+              </a>
+              {/* Gmail compose for laptops 14"+ (≥ 1280px) */}
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=shoryabhushan0@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden xl:inline-flex items-center gap-2 rounded-full bg-violet-500/10 border border-violet-500/40 px-6 py-2.5 text-sm font-semibold text-violet-300 hover:bg-violet-500/20 hover:border-violet-400/50 transition-colors"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-violet-500 animate-pulse" />
                 Let&apos;s Talk
