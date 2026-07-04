@@ -296,6 +296,8 @@ export const BlurImage = ({
   src,
   className,
   alt,
+  fill: _fill,
+  blurDataURL: _blurDataURL,
   ...rest
 }: ImageProps) => {
   const [isLoading, setLoading] = useState(true);
