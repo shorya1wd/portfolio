@@ -26,7 +26,7 @@ export default function CanvasTextDemo() {
       {/* Name */}
       <h1
         className={cn(
-          "group relative mx-auto flex flex-row flex-wrap items-baseline justify-center gap-x-3 text-center text-5xl font-bold text-neutral-900 sm:text-6xl md:text-7xl lg:text-8xl dark:text-neutral-200",
+          "group relative mx-auto flex flex-row flex-wrap items-baseline justify-center gap-x-3 text-center text-4xl font-bold text-neutral-900 sm:text-6xl md:text-7xl lg:text-8xl dark:text-neutral-200",
         )}
       >
         <CanvasText
