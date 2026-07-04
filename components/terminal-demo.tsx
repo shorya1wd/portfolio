@@ -4,7 +4,7 @@ import { Terminal } from "@/components/ui/terminal";
 
 export default function TerminalDemo() {
   return (
-    <div className="w-full pt-2 pr-8">
+    <div className="w-full pt-2 md:pr-8">
       <Terminal
         commands={[
           "How I work?",

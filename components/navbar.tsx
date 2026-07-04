@@ -48,9 +48,7 @@ export function Navbar() {
       {/* CTA */}
       <MagneticButton>
         <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=shoryabhushan0@gmail.com" 
-          target="_blank" 
-          rel="noopener noreferrer"
+          href="mailto:shoryabhushan0@gmail.com"
           className="group relative inline-flex items-center gap-2 rounded-full bg-violet-500/10 border border-violet-500/30 px-4 py-2 text-sm font-medium text-violet-400 transition-all duration-300 hover:bg-violet-500/20 hover:border-violet-400/50 hover:text-violet-300 hover:shadow-[0_0_20px_rgba(139,92,246,0.2)]"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-violet-400 animate-pulse" />

@@ -35,12 +35,12 @@ export default function Home() {
             </motion.h2>
           }
         >
-          <div className="w-full h-full bg-black/40 backdrop-blur-md rounded-2xl p-6 lg:p-12 border border-white/10 flex flex-col justify-center overflow-y-auto">
-            <div className="w-full max-w-[100rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32 items-start mt-4">
+          <div className="w-full h-full bg-black/40 backdrop-blur-md rounded-2xl p-4 md:p-6 lg:p-12 border border-white/10 flex flex-col justify-center overflow-y-auto overflow-x-hidden">
+            <div className="w-full max-w-[100rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-32 items-start mt-4">
               <div className="flex justify-start w-full">
                 <EncryptedTextDemo />
               </div>
-              <div className="flex justify-end lg:mt-8 w-full">
+              <div className="flex justify-center lg:justify-end lg:mt-8 w-full">
                 <TerminalDemo />
               </div>
             </div>
@@ -67,9 +67,7 @@ export default function Home() {
           <div className="flex flex-col items-center md:items-end gap-4">
             <MagneticButton>
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=shoryabhushan0@gmail.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="mailto:shoryabhushan0@gmail.com"
                 className="inline-flex items-center gap-2 rounded-full bg-violet-500/10 border border-violet-500/40 px-6 py-2.5 text-sm font-semibold text-violet-300 hover:bg-violet-500/20 hover:border-violet-400/50 transition-colors"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-violet-500 animate-pulse" />

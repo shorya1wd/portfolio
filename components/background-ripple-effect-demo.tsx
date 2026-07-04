@@ -41,7 +41,7 @@ export default function BackgroundRippleEffectDemo() {
     50, 52, 54,
     56, 58, 60, 62,
     64, 66, 68,
-    71, 73, 75
+    71, 73, 74
   ];
 
   // Tablet grid (13 columns) to fit perfectly between 768px and 1280px without overflowing

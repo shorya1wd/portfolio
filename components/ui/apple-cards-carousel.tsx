@@ -212,6 +212,17 @@ export const Card = ({
               exit={{ opacity: 0 }}
               className="fixed inset-0 h-full w-full bg-black/80 backdrop-blur-lg"
             />
+            {/* Fixed close button — always visible at top-right regardless of scroll */}
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              className="fixed top-4 right-4 z-[70] flex h-10 w-10 items-center justify-center rounded-full bg-black shadow-lg dark:bg-white"
+              onClick={handleClose}
+              aria-label="Close"
+            >
+              <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
+            </motion.button>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -220,12 +231,6 @@ export const Card = ({
               layoutId={layout ? `card-${card.title}` : undefined}
               className="relative z-[60] mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-white p-4 font-sans md:p-10 dark:bg-neutral-900"
             >
-              <button
-                className="sticky top-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white"
-                onClick={handleClose}
-              >
-                <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
-              </button>
               <motion.p
                 layoutId={layout ? `category-${card.title}` : undefined}
                 className="text-base font-medium text-black dark:text-white"
