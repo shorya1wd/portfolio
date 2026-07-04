@@ -75,6 +75,7 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
     scrambleCharsRef.current = initial.split("");
     startTimeRef.current = performance.now();
     lastFlipTimeRef.current = startTimeRef.current;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setRevealCount(0);
 
     let isCancelled = false;
@@ -133,6 +134,7 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
       aria-label={text}
       role="text"
     >
+      {/* eslint-disable-next-line react-hooks/refs */}
       {text.split("").map((char, index) => {
         const isRevealed = index < revealCount;
         const displayChar = isRevealed

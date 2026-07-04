@@ -49,9 +49,11 @@ export const AnimatedTestimonials = ({
       const interval = setInterval(handleNext, 5000);
       return () => clearInterval(interval);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoplay]);
 
   const randomRotateY = () => {
+    // eslint-disable-next-line react-hooks/purity
     return Math.floor(Math.random() * 21) - 10;
   };
   return (

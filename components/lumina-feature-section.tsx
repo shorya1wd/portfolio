@@ -146,7 +146,8 @@ export default function LuminaFeatureSection() {
         </h4>
 
         <p className="mx-auto my-4 max-w-2xl text-center text-sm font-normal text-neutral-500 lg:text-base dark:text-neutral-300">
-          <Link href="https://watchlumina.space" className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-600">
+          <Link href="https://watchlumina.space" target="_blank"
+                rel="noopener noreferrer" className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-600">
             Lumina
           </Link>
           {" "}is a full-stack video platform with uploads, playlists, subscriptions, comments, search, watch history, and secure authentication.
@@ -305,6 +306,7 @@ export const SkeletonTwo = () => {
             variants={imageVariants}
             key={"images-first" + idx}
             style={{
+              // eslint-disable-next-line react-hooks/purity
               rotate: Math.random() * 20 - 10,
             }}
             whileHover="whileHover"
@@ -326,6 +328,7 @@ export const SkeletonTwo = () => {
           <motion.div
             key={"images-second" + idx}
             style={{
+              // eslint-disable-next-line react-hooks/purity
               rotate: Math.random() * 20 - 10,
             }}
             variants={imageVariants}
@@ -385,6 +388,7 @@ export const Globe = ({ className }: { className?: string }) => {
         { location: [40.7128, -74.006], size: 0.1 },
       ],
       // @ts-expect-error COBE types are missing onRender
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       onRender: (state: Record<string, any>) => {
         // Called on every animation frame.
         // `state` will be an empty object, return updated params.

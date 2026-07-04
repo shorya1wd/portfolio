@@ -48,6 +48,7 @@ const Word = ({
   range,
 }: {
   children: React.ReactNode;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   progress: any;
   range: [number, number];
 }) => {

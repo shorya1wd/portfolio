@@ -54,7 +54,7 @@ export default function ImagoFeatureSection() {
           <li>Asynchronous Video Processing: Built an intelligent auto-polling UI that allows users to seamlessly upload files up to 100MB without locking up their browser, displaying real-time bandwidth savings once Cloudinary finishes backend compression.</li>
           <li>AI-Powered Image Studio: Integrated advanced editing tools directly into the platform, including background removal, generative color replacement, image restoration, and smart-cropping for specific social media aspect ratios.</li>
           <li>Frictionless Media Delivery: Implemented automated hover-previews for videos and highly optimized download links, reducing average file payloads by 30-40% to drastically reduce bandwidth consumption.</li>
-          <li>Tiered Access & Security: Engineered a seamless dual-access system. The platform allows for anonymous public browsing and downloading, while securing uploads, deletions, and personal dashboards ("My Videos" / "My Images") behind a robust authentication layer.</li>
+          <li>Tiered Access & Security: Engineered a seamless dual-access system. The platform allows for anonymous public browsing and downloading, while securing uploads, deletions, and personal dashboards (&quot;My Videos&quot; / &quot;My Images&quot;) behind a robust authentication layer.</li>
         </ul>
       ),
   
@@ -101,9 +101,9 @@ export default function ImagoFeatureSection() {
       title: "Challenges Solved",
       description:(
         <ul className="list-disc pl-5 space-y-2">
-          <li>Stale State & Background Syncing: Solved the challenge of asynchronous video processing by engineering a custom API route that polls Cloudinary for derived file sizes. This ensures the PostgreSQL database and the React UI stay perfectly in sync with Cloudinary’s background workers, automatically updating the client's screen from "Processing" to "Finished" without requiring a page refresh.</li>
-          <li>Data Integrity & Format Shifting Discrepancies: Cloudinary's aggressive background optimization can cause database mismatches—for example, compressing a video to a tiny .webm file while the client requests an .mp4 download. I standardized the eager transformation pipeline to ensure the backend polling strictly filtered for specific formats and mathematically verified file sizes, guaranteeing that the "Bandwidth Saved" UI metrics perfectly matched the exact file delivered to the end user.</li>
-          <li>Preventing Race Conditions & Dead Pages: Handling heavy media compression in the background created a timing gap where users could attempt to download a file before the server finished processing it, resulting in browser timeouts. I implemented a dynamic, auto-polling UI state that intercepts download requests, visually indicates "Processing," and automatically unlocks the exact millisecond the backend confirms the file is ready, completely eliminating dead navigation.</li>
+          <li>Stale State & Background Syncing: Solved the challenge of asynchronous video processing by engineering a custom API route that polls Cloudinary for derived file sizes. This ensures the PostgreSQL database and the React UI stay perfectly in sync with Cloudinary’s background workers, automatically updating the client&apos;s screen from &quot;Processing&quot; to &quot;Finished&quot; without requiring a page refresh.</li>
+          <li>Data Integrity &amp; Format Shifting Discrepancies: Cloudinary&apos;s aggressive background optimization can cause database mismatches—for example, compressing a video to a tiny .webm file while the client requests an .mp4 download. I standardized the eager transformation pipeline to ensure the backend polling strictly filtered for specific formats and mathematically verified file sizes, guaranteeing that the &quot;Bandwidth Saved&quot; UI metrics perfectly matched the exact file delivered to the end user.</li>
+          <li>Preventing Race Conditions & Dead Pages: Handling heavy media compression in the background created a timing gap where users could attempt to download a file before the server finished processing it, resulting in browser timeouts. I implemented a dynamic, auto-polling UI state that intercepts download requests, visually indicates &quot;Processing,&quot; and automatically unlocks the exact millisecond the backend confirms the file is ready, completely eliminating dead navigation.</li>
         </ul>
       ),
       
@@ -123,7 +123,8 @@ export default function ImagoFeatureSection() {
         </h4>
 
         <p className="mx-auto my-4 max-w-2xl text-center text-sm font-normal text-neutral-500 lg:text-base dark:text-neutral-300">
-          <Link href="https://imagomediastudio.com" className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-600">
+          <Link href="https://imagomediastudio.com" target="_blank"
+                rel="noopener noreferrer" className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-600">
             Imago
           </Link>
           {" "}is a high-performance media platform for uploading, browsing, downloading, and editing images and videos with Cloudinary-powered optimization and AI transformations.
@@ -282,6 +283,7 @@ export const SkeletonTwo = () => {
             variants={imageVariants}
             key={"images-first" + idx}
             style={{
+              // eslint-disable-next-line react-hooks/purity
               rotate: Math.random() * 20 - 10,
             }}
             whileHover="whileHover"
@@ -303,6 +305,7 @@ export const SkeletonTwo = () => {
           <motion.div
             key={"images-second" + idx}
             style={{
+              // eslint-disable-next-line react-hooks/purity
               rotate: Math.random() * 20 - 10,
             }}
             variants={imageVariants}
@@ -362,6 +365,7 @@ export const Globe = ({ className }: { className?: string }) => {
         { location: [40.7128, -74.006], size: 0.1 },
       ],
       // @ts-expect-error COBE types are missing onRender
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       onRender: (state: Record<string, any>) => {
         // Called on every animation frame.
         // `state` will be an empty object, return updated params.

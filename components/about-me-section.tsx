@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { TextRevealScroll } from "@/components/ui/text-reveal-scroll";
 
@@ -50,10 +50,13 @@ export default function AboutMeSection() {
           <div className="relative w-72 md:w-80">
             {/* Glow behind image */}
             <div className="absolute inset-0 rounded-3xl bg-violet-500/20 blur-3xl scale-90" />
-            <img
+            <Image
               src="/me4.jpg"
               alt="Shorya Bhushan"
-              className="relative w-full rounded-3xl aspect-[3/4] object-cover object-top shadow-2xl border border-violet-500/10"
+              width={320}
+              height={427}
+              priority
+              className="relative w-full rounded-3xl aspect-3/4 object-cover object-top shadow-2xl border border-violet-500/10"
             />
           </div>
         </div>

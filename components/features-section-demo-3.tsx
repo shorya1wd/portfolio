@@ -5,6 +5,7 @@ import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
+import Image from "next/image";
 
 export default function FeaturesSectionDemo() {
   const features = [
@@ -109,7 +110,7 @@ export const SkeletonOne = () => {
       <div className="group mx-auto h-full w-full bg-white p-5 shadow-2xl dark:bg-neutral-900">
         <div className="flex h-full w-full flex-1 flex-col space-y-2">
           {/* TODO */}
-          <img
+          <Image
             src="/linear.webp"
             alt="header"
             width={800}
@@ -136,7 +137,7 @@ export const SkeletonThree = () => {
         <div className="relative flex h-full w-full flex-1 flex-col space-y-2">
           {/* TODO */}
           <IconBrandYoutubeFilled className="absolute inset-0 z-10 m-auto h-20 w-20 text-red-500" />
-          <img
+          <Image
             src="https://assets.aceternity.com/fireship.jpg"
             alt="header"
             width={800}
@@ -179,17 +180,18 @@ export const SkeletonTwo = () => {
             variants={imageVariants}
             key={"images-first" + idx}
             style={{
+              // eslint-disable-next-line react-hooks/purity
               rotate: Math.random() * 20 - 10,
             }}
             whileHover="whileHover"
             whileTap="whileTap"
             className="mt-4 -mr-4 shrink-0 overflow-hidden rounded-xl border border-neutral-100 bg-white p-1 dark:border-neutral-700 dark:bg-neutral-800"
           >
-            <img
+            <Image
               src={image}
               alt="bali images"
-              width="500"
-              height="500"
+              width={500}
+              height={500}
               className="h-20 w-20 shrink-0 rounded-lg object-cover md:h-40 md:w-40"
             />
           </motion.div>
@@ -200,6 +202,7 @@ export const SkeletonTwo = () => {
           <motion.div
             key={"images-second" + idx}
             style={{
+              // eslint-disable-next-line react-hooks/purity
               rotate: Math.random() * 20 - 10,
             }}
             variants={imageVariants}
@@ -207,11 +210,11 @@ export const SkeletonTwo = () => {
             whileTap="whileTap"
             className="mt-4 -mr-4 shrink-0 overflow-hidden rounded-xl border border-neutral-100 bg-white p-1 dark:border-neutral-700 dark:bg-neutral-800"
           >
-            <img
+            <Image
               src={image}
               alt="bali images"
-              width="500"
-              height="500"
+              width={500}
+              height={500}
               className="h-20 w-20 shrink-0 rounded-lg object-cover md:h-40 md:w-40"
             />
           </motion.div>
@@ -259,6 +262,7 @@ export const Globe = ({ className }: { className?: string }) => {
         { location: [40.7128, -74.006], size: 0.1 },
       ],
       // @ts-expect-error COBE types are missing onRender
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       onRender: (state: Record<string, any>) => {
         // Called on every animation frame.
         // `state` will be an empty object, return updated params.
