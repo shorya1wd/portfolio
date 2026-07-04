@@ -15,6 +15,8 @@ export default function BackgroundRippleEffectDemo() {
   ];
 
   const [deviceType, setDeviceType] = React.useState<"mobile" | "tablet" | "desktop">("desktop");
+  const [containerWidth, setContainerWidth] = React.useState(0);
+  const containerRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const checkDevice = () => {
@@ -25,6 +27,18 @@ export default function BackgroundRippleEffectDemo() {
     checkDevice();
     window.addEventListener("resize", checkDevice);
     return () => window.removeEventListener("resize", checkDevice);
+  }, []);
+
+  // Measure the container so we can compute a cell size that always fits
+  React.useEffect(() => {
+    if (!containerRef.current) return;
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        setContainerWidth(entry.contentRect.width);
+      }
+    });
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
   }, []);
 
   const logoIndicesDesktop = [
@@ -55,11 +69,17 @@ export default function BackgroundRippleEffectDemo() {
     95, 97, 99, 101
   ];
 
-  const config = {
+  const baseConfig = {
     mobile: { indices: logoIndicesMobile, rows: 12, cols: 7, height: 672 },
     tablet: { indices: logoIndicesTablet, rows: 9, cols: 13, height: 504 },
     desktop: { indices: logoIndicesDesktop, rows: 9, cols: 27, height: 504 },
   }[deviceType];
+
+  // Compute a dynamic cell size so all columns fit within the container on small screens
+  const cols = baseConfig.cols;
+  const cellSize = deviceType === "mobile" && containerWidth > 0
+    ? Math.floor(containerWidth / cols)
+    : 56;
 
   const activeIndices = config.indices;
 
