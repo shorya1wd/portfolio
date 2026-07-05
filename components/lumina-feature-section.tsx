@@ -51,13 +51,13 @@ export default function LuminaFeatureSection() {
     {
       name: "Upload Video",
       designation: "Media Pipeline",
-      quote: "Robust pipeline utilizing Cloudinary and Multer for large video chunks and images.",
+      quote: "Robust pipeline utilizing Cloudflare R2 and Multer for large video chunks and images.",
       src: "/Lumina-uploadvideo.png",
     },
     {
       name: "Edit Video",
       designation: "Media Pipeline",
-      quote: "Full CRUD operations on existing media with state synchronized to Cloudinary.",
+      quote: "Full CRUD operations on existing media with state synchronized to Cloudflare R2.",
       src: "/Lumina-editvideo.png",
     },
     {
@@ -90,7 +90,7 @@ export default function LuminaFeatureSection() {
           <li>Frontend: React 19, Vite, Tailwind CSS 4, React Router, Axios</li>
           <li>Backend: Node.js, Express.js, RESTful APIs</li>
           <li>Database: MongoDB, Mongoose (with complex aggregation pipelines)</li>
-          <li>Media & Storage: Cloudinary, Multer</li>
+          <li>Media & Storage: Cloudflare R2, Multer</li>
           <li>Security & Auth: JWT (Access/Refresh), bcrypt, Node crypto, Resend API</li>
           <li>DevOps: Vercel (Frontend), Render (Backend), Custom DNS & CORS configuration</li>
         </ul>

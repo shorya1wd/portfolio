@@ -53,7 +53,7 @@ export default function ImagoFeatureSection() {
         <ul className="list-disc pl-5 space-y-2">
           <li>Asynchronous Video Processing: Built an intelligent auto-polling UI that allows users to seamlessly upload files up to 100MB without locking up their browser, displaying real-time bandwidth savings once Cloudinary finishes backend compression.</li>
           <li>AI-Powered Image Studio: Integrated advanced editing tools directly into the platform, including background removal, generative color replacement, image restoration, and smart-cropping for specific social media aspect ratios.</li>
-          <li>Frictionless Media Delivery: Implemented automated hover-previews for videos and highly optimized download links, reducing average file payloads by 30-40% to drastically reduce bandwidth consumption.</li>
+          <li>Frictionless Media Delivery: Implemented automated hover-previews for videos and highly optimized download links, reducing average file payloads by around 70% to drastically reduce bandwidth consumption.</li>
           <li>Tiered Access & Security: Engineered a seamless dual-access system. The platform allows for anonymous public browsing and downloading, while securing uploads, deletions, and personal dashboards (&quot;My Videos&quot; / &quot;My Images&quot;) behind a robust authentication layer.</li>
         </ul>
       ),
