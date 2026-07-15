@@ -9,6 +9,9 @@ const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://shoryabhushan.com'),
+  alternates: {
+    canonical: 'https://shoryabhushan.com',
+  },
   title: "Shorya Bhushan — Full-Stack Web Developer",
   description: "Full-stack web developer who genuinely enjoys the craft — from clean APIs to interfaces people actually like using. Currently open to freelance and full-time work.",
   openGraph: {
