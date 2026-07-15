@@ -35,6 +35,15 @@ export const metadata: Metadata = {
     description: "Full-stack web developer who genuinely enjoys the craft — from clean APIs to interfaces people actually like using.",
     images: ['/og-image.png'],
   },
+  icons: {
+    icon: [
+      { url: '/icon', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: [
+      { url: '/apple-icon', type: 'image/png', sizes: '180x180' },
+    ],
+    shortcut: '/icon',
+  },
 };
 
 export default function RootLayout({
